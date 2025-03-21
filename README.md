@@ -20,28 +20,6 @@ Visit https://github.com/maiconcarneiro/queryTester for more information.
 ==========================================================================================
 Configuration file..........: fetch_demo.cfg
 Database Information........: localhost:1521/freepdb1
-SQL Query Script File ......: sql/select_fetch_te# About
-Created by <a href="https://www.linkedin.com/in/maiconcarneiro" target="_blank">Maicon Carneiro</a> (dibiei.blog)
-
-
-### What is that ?
-The queryTester is an Free SQL Stress Test tool that can run the same SQL statement how many times you want using concurrent/parallel connections in Oracle Database.
-
-The tool is intended for DBAs and developers run yours custom test case with your own SQL query against an Oracle database and then analyze the impact of the test by using ASH, AWR, or even using the metrics that are automatically captured by this tool.
-
-This is an Java application and can be used in MacOS, Linux and Windows systems. No additional JDBC driver is required as it already included in the tool. This is a command line tool e no GUI support is required, you only need a terminal with Java 8 or higher installed.
-
-When executed, the tool will generate a output like this:
-```
-$ java -jar queryTester.jar --config=demo.cfg --executions=500 --threads=10 --sqlMetrics=with_value
-
-queryTester - A Free Oracle SQL Stress Test Tool
-Visit https://github.com/maiconcarneiro/queryTester for more information.
-
-
-==========================================================================================
-Configuration file..........: fetch_demo.cfg
-Database Information........: localhost:1521/freepdb1
 SQL Query Script File ......: sql/select_fetch_test.sql
 SQL Query Binds File .......: sql/select_fetch_test.bind
 SQL Preview SQL ID..........: yes
@@ -107,13 +85,18 @@ Rows Processed                      |     14,970 |     19,950 |      4,980 |    
                    0 : bytes sent via SQL*Net to client (converted to MBytes)
 ------------------------------------------------------------------------------------------
 ```
+
 ## A) Get started
+#### Prereq: Ensure that you have java 1.8 or higher in machine where you will run queryTester:
+``` shell
+java -version
+```
+
 #### 1) Download the tool from my blog repository:
 ``` shell
 mkdir ~/queryTester
 cd  ~/queryTester
-wget "https://github.com/maiconcarneiro/blog-dibiei/blob/main/queryTester.jar"
-https://github.com/maiconcarneiro/queryTester/blob/main/queryTester.jar
+wget "https://github.com/maiconcarneiro/queryTester/blob/main/queryTester.jar"
 ```
 
 #### 2) Create a script file with SQL to be executed
@@ -559,7 +542,7 @@ sql.query=my_select.sql
 java -jar queryTester.jar --config=sample_config.cfg
 ```
 
-## B) SQL with Bind Variables (Optional)
+## B) SQL with Bind Variables
 To work with BIND variables, you need to create an additional file with the bind values using positional format.
 
 #### 1) Create a script file with the SQL using Bind variables.
