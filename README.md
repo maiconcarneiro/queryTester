@@ -1,4 +1,4 @@
-# About queryTester
+# Get Started
 Created by <a href="https://www.linkedin.com/in/maiconcarneiro" target="_blank">Maicon Carneiro</a> (dibiei.blog)
 
 
