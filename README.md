@@ -11,7 +11,7 @@ This is an Java application and can be used in MacOS, Linux and Windows systems.
 
 When executed, the tool will generate a output like this:
 ```
-$ java -jar queryTester.jar --config=demo.cfg --executions=500 --threads=10 --sqlMetrics=with_value
+$ ./queryTester --config=demo.cfg --executions=500 --threads=10 --sqlMetrics=with_value
 
 queryTester - A Free Oracle SQL Stress Test Tool
 Visit https://github.com/maiconcarneiro/queryTester for more information.
@@ -94,9 +94,9 @@ java -version
 
 #### 1) Download the tool from my blog repository:
 ``` shell
-mkdir ~/queryTester
-cd  ~/queryTester
-wget "https://github.com/maiconcarneiro/queryTester/blob/main/queryTester.jar"
+wget "https://github.com/maiconcarneiro/queryTester/raw/refs/heads/main/queryTester.zip"
+unzip queryTester.zip
+cd queryTester
 ```
 
 #### 2) Create a script file with SQL to be executed
@@ -108,7 +108,7 @@ SELECT SYSDATE FROM DUAL;
 #### 3) Create a configuration file
 ###### Example using the helper command line:
 ``` shell
- java -jar queryTester.jar --create_sample_config
+ ./queryTester --create_sample_config
 ```
 
 #### 4) Update the configuration file
@@ -122,7 +122,7 @@ sql.query=my_select.sql
 #### 5) Execute the queryTester
 ###### Example using sample_config.cfg:
 ``` bash
-java -jar queryTester.jar --config=sample_config.cfg
+./queryTester --config=sample_config.cfg
 ```
 
 ## B) SQL with Bind Variables
@@ -164,7 +164,7 @@ sql.binds=sql/insertMyTable.bind
 #### 3) Execute the he queryTester using configuration file inserts.cfg
 
 ```
-java -jar queryTester.jar --config=inserts.cfg
+./queryTester --config=inserts.cfg
 ```
 
 ## C) Workload Control
@@ -325,7 +325,7 @@ You can enable the SQL Translation feature in the queryTester sessions by specif
 
 ##### Example:
 ``` shell
-java -jar queryTester.jar --config=example.cfg --translationProfileName=USR_TEST.MY_PROFILE1
+./queryTester --config=example.cfg --translationProfileName=USR_TEST.MY_PROFILE1
 ```
 
 ## G) Using Client-Side Connection Pool
@@ -359,7 +359,7 @@ The application will use the first TNS using the precedence:
 
 How to override the default TNS Admin:
 ``` shell
-java -jar queryTester.jar --config=demo.cfg --tnsAdmin=/home/oracle/tns
+./queryTester --config=demo.cfg --tnsAdmin=/home/oracle/tns
 ```
 
 #### OJDBC Properties
